@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D87732B6-B0FD-458B-988E-AC2B4F9A041D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SampleTests</RootNamespace>
+    <AssemblyName>SampleTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.UITest">
+      <HintPath>..\packages\Xamarin.UITest.1.0.0\lib\Xamarin.UITest.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\Android\AndHomePage.cs" />
+    <Compile Include="Pages\Android\AndInformationPage.cs" />
+    <Compile Include="Pages\Android\AndLocationPage.cs" />
+    <Compile Include="Pages\Interfaces\IHomePage.cs" />
+    <Compile Include="Pages\Interfaces\IInformationPage.cs" />
+    <Compile Include="Pages\Interfaces\ILocationsPage.cs" />
+    <Compile Include="Pages\Interfaces\IPage.cs" />
+    <Compile Include="Pages\IOS\IOSHomePage.cs" />
+    <Compile Include="Pages\IOS\IOSInformationPage.cs" />
+    <Compile Include="Pages\IOS\IOSLocationPage.cs" />
+    <Compile Include="SpecflowExample\Example.feature.cs">
+      <DependentUpon>Example.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SpecflowExample\ExampleSteps.cs" />
+    <Compile Include="SpecflowExample\FeatureBase.cs" />
+    <Compile Include="AppManager.cs" />
+    <Compile Include="Current.cs" />
+    <Compile Include="PageContainer.cs" />
+    <Compile Include="PageResolver.cs" />
+    <Compile Include="Tests.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="SpecflowExample\Example.feature" />
+    <None Include="Apps\MyShopiOS.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Apps\com.refractored.myshoppe.apk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Configuration\App.config" />
+    <None Include="Configuration\packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Apps\" />
+    <Folder Include="Pages\" />
+    <Folder Include="SpecflowExample\" />
+    <Folder Include="Configuration\" />
+    <Folder Include="Pages\Android\" />
+    <Folder Include="Pages\Interfaces\" />
+    <Folder Include="Pages\IOS\" />
+  </ItemGroup>
+</Project>
