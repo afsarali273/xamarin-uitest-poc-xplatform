@@ -1,4 +1,4 @@
-# SAMPLE X-Platfrom Mobile App Testing Framework for Xamarin UITest C# with Specflow
+# SAMPLE X-Platfrom Mobile App Testing Framework for Xamarin UITest C# with Nunit and Specflow.Nunit
 
 <span style="color:red;">**NOTE: THis is a personal project and is not an officially Xamarin template/sample. USE AT OWN RISK!!!! If you do not know what you are doing please don't use this sample. It should only be used to give you ideas for a framework specific to your app**</span> 
 
