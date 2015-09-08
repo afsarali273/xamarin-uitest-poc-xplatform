@@ -30,7 +30,6 @@ namespace CrossPlatSample
                 App = ConfigureApp
 					.Android
                     .ApkFile("Apps/com.refractored.myshoppe.apk")
-                    .ApiKey("57190888d530d512fb5bdd93908bb537")
                     .StartApp(mode);
             }
             else
