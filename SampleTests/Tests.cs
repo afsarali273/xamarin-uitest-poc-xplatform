@@ -10,14 +10,13 @@ using Autofac;
 namespace CrossPlatSample
 {
     [TestFixture(Platform.Android)]
-    [TestFixture(Platform.iOS)]
+    //[TestFixture(Platform.iOS)]
     public class Tests
     {
         public Tests(Platform platform)
         {
             Current.Platform = platform;
         }
-
         [Test]
         public void AppLaunches()
         {
